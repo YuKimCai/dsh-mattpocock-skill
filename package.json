@@ -1,0 +1,68 @@
+{
+  "name": "dsh-mattpocock-skills",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Matt Pocock 的工程技能（27 个）做成 DeepSeek Harness 的 Agent 预设：grilling 需求拷问、spec/工单拆分、TDD、双轴 code review、领域建模、诊断难题、wayfinder 决策地图、retro 复盘。",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./composition": "./lib/composition.js",
+    "./sync": "./lib/sync.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "presets",
+    "skills",
+    "cordis.patch.yml",
+    "overlay.yml",
+    "default-preset.yml",
+    "scripts",
+    "README.md",
+    "SKILLS.md",
+    "NOTICE.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "dsh-agent-preset",
+    "skills",
+    "tdd",
+    "code-review",
+    "mattpocock",
+    "deepseek-harness"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "verify": "node scripts/verify-skills.mjs ./skills",
+    "overlay": "printf 'dsh --profile web --patch ./overlay.yml --no-open\\n'",
+    "convert": "node scripts/convert-skills.mjs"
+  },
+  "author": {
+    "name": "dsh-mattpocock-skills contributors"
+  },
+  "contributors": [
+    {
+      "name": "Matt Pocock",
+      "url": "https://github.com/mattpocock/skills",
+      "comment": "skill content (MIT)"
+    }
+  ],
+  "upstream": {
+    "name": "mattpocock/skills",
+    "url": "https://github.com/mattpocock/skills",
+    "version": "1.3.1",
+    "commit": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+    "license": "MIT"
+  }
+}

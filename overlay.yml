@@ -1,0 +1,14 @@
+# Try this package without touching any profile.
+#
+#   dsh --profile web --patch ./overlay.yml
+#
+# Run it from this directory. The `./lib/index.js` row resolves against THIS
+# file's directory (the harness anchors every relative `insert` name to the
+# patch file that declared it), so a clone works from wherever it lands.
+- insert:
+    - id: mattpocock-skills
+      name: './lib/index.js'
+      config:
+        # Copy the packaged skills over the synced copy on every start. Handy
+        # while trying it out; set false once you start editing the copy.
+        resyncSkills: true

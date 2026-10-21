@@ -1,0 +1,10 @@
+# Make the Matt Pocock agent the default preset for new sessions.
+#
+#   dsh --profile web --patch ./overlay.yml --patch ./default-preset.yml
+#
+# Pair with overlay.yml when you are trying the package without installing it,
+# or use it alone once the bundle is installed in the profile.
+- id: agent-preset-registry
+  config:
+    default: mattpocock
+    selectedDefault: mattpocock

@@ -1,0 +1,16 @@
+# dsh-mattpocock-skills bundle patch
+#
+# One inserted row: this plugin. It mounts at the host plane, materializes the
+# packaged skill tree under $DSH_HOME/mattpocock-skills/skills, and declares the
+# `mattpocock` agent preset to ctx.agentPresets. The preset's own composition
+# lives in presets/mattpocock/agent.cordis.yml and is NOT a loader row here,
+# because the harness mounts presets through the registry, not by scanning a
+# directory.
+- insert:
+    - id: mattpocock-skills
+      name: 'dsh-mattpocock-skills'
+      config:
+        # Re-copy the packaged skills on every start instead of only when the
+        # package version changes. Off by default: edits to the synced copy are
+        # otherwise kept across restarts of the same version.
+        resyncSkills: false
